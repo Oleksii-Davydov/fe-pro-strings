@@ -4,8 +4,12 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {};
-
+let string = 'Z And V'
+export const replaceZAndVFromString = (string) => {
+    console.log(string.replace(string,  '* And *'))
+};
+// Должно вернуть 'my name vlad and I'
+// Работаем по первому совпадению, на второе нам все равно. Если совпадений нет, возвращаем оригинальную строку с первого аргумента
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
  * вторая строка это искомое слово, третья это то слово, на которое мы должны
@@ -16,7 +20,10 @@ export const replaceZAndVFromString = (string) => {};
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+let stringA = 'my name bohdan and I'
+let word = 'bohdan'
+let newWord = 'vlad'
+export const changeWord = (stringA, word, newWord) => {console.log(stringA.replace(word,newWord))};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
@@ -24,7 +31,10 @@ export const changeWord = (string, word, newWord) => {};
  * @param {number} length
  * @returns {string}
  */
-export const truncate = (string, length) => {};
+
+let stringB = 'test strubg '
+let lengthB = 3
+export const truncate = (stringB, lengthB) => {console.log(stringB.slice(stringB,3))};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -37,7 +47,9 @@ export const truncate = (string, length) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => {};
+let stringD = 'test'
+let symbolD = 't'
+export const quantityOfSymbols = (string, symbol) => {console.log(stringD.split(symbolD).length-1)};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -54,4 +66,8 @@ export const quantityOfSymbols = (string, symbol) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {};
+let stringW = 'test';
+let symbolW = 't';
+export const quantityOfSymbolsWithIndexOf = (stingW, symbolW) => { }
+
+
