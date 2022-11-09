@@ -34,7 +34,7 @@ export const changeWord = (stringA, word, newWord) => {console.log(stringA.repla
 
 let stringB = 'test strubg '
 let lengthB = 3
-export const truncate = (stringB, lengthB) => {console.log(stringB.slice(stringB,3))};
+export const truncate = (stringB, lengthB) => {console.log(stringB.toslice(stringB,3))};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -49,7 +49,7 @@ export const truncate = (stringB, lengthB) => {console.log(stringB.slice(stringB
  */
 let stringD = 'test'
 let symbolD = 't'
-export const quantityOfSymbols = (string, symbol) => {console.log(stringD.split(symbolD).length-1)};
+export const quantityOfSymbols = (string, symbol) => {console.log(stringD.toLowerCase().split(symbolD.toLowerCase()).length-1)};
 
 
 /**
@@ -75,7 +75,7 @@ export const quantityOfSymbolsWithIndexOf = (stingW, symbolW) => {
         let idx = string.indexOf(symbol)
         while (idx != -1) {
             indices ++
-            idx = string.toLowerCase().indexOf(symbol.toLowerCase(), idx + 1);
+            idx = string.toLowerCase().indexOf(symbol.LowerCase(), idx + 1);
         }
         return indices
     };
