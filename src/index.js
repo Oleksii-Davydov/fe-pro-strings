@@ -67,16 +67,38 @@ export const quantityOfSymbols = (string, symbol) => {console.log(stringD.toLowe
  * @param {string} symbol
  * @returns {number}
  */
-let stringW = 'test';
+let count = 0;
+let stringW = 'Test';
 let symbolW = 't';
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
-    let indices = 0
-    let idx = string.indexOf(symbol)
-    while (idx != -1) {
-        indices ++
-        idx = string.toLowerCase().indexOf(symbol.toLowerCase(), idx + 1);
+
+export const quantityOfSymbolsWithIndexOf = (stringW, symbolW) => {
+    let index = -1;
+    stringW = stringW.toLowerCase().split('');
+    symbolW = symbolW.toLowerCase();
+    while (true) {
+        index = stringW.indexOf(symbolW, index + 1);
+        if (index !== -1) {
+            count++;
+        }
+        else {
+            break;
+        }
     }
-    return indices
+
+    console.log(count);
 };
 
-console.log(quantityOfSymbolsWithIndexOf(stringW, symbolW))
+//quantityOfSymbolsWithIndexOf(stringW, symbolW);
+// let stringW = 'test';
+// let symbolW = 't';
+// export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
+//     let indices = 0
+//     let idx = string.indexOf(symbol)
+//     while (idx != -1) {
+//         indices ++
+//         idx = string.toLowerCase().indexOf(symbol.toLowerCase(), idx + 1);
+//     }
+//     return indices
+// };
+//
+// console.log(quantityOfSymbolsWithIndexOf(stringW, symbolW))
