@@ -51,6 +51,7 @@ let stringD = 'test'
 let symbolD = 't'
 export const quantityOfSymbols = (string, symbol) => {console.log(stringD.split(symbolD).length-1)};
 
+
 /**
  * Принимает строку в первом аргументе, и символ во втором
  * И должно вернуть количество этих символов в этой строке
@@ -68,6 +69,15 @@ export const quantityOfSymbols = (string, symbol) => {console.log(stringD.split(
  */
 let stringW = 'test';
 let symbolW = 't';
-export const quantityOfSymbolsWithIndexOf = (stingW, symbolW) => { }
-
-
+export const quantityOfSymbolsWithIndexOf = (stingW, symbolW) => {
+    {
+        let indices = 0
+        let idx = string.indexOf(symbol)
+        while (idx != -1) {
+            indices ++
+            idx = string.toLowerCase().indexOf(symbol.toLowerCase(), idx + 1);
+        }
+        return indices
+    };
+    console.log(quantityOfSymbolsWithIndexOf(stringW, symbolW))
+}
