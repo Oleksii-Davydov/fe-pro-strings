@@ -6,7 +6,15 @@
  */
 
 export const replaceZAndVFromString = (string) => {
-    return string.replaceAll('Z', '*').replaceAll('V', '*')
+    let result = '';
+    for (let letter of string) {
+if (letter.toLowerCase() === 'z' || letter.toLowerCase() === 'v' ) {
+    letter = '*';
+}
+result = `${result}${letter}`
+    }
+    return result;
+    //return string.replaceAll('Z', '*')
 };
 // Должно вернуть 'my name vlad and I'
 // Работаем по первому совпадению, на второе нам все равно. Если совпадений нет, возвращаем оригинальную строку с первого аргумента
