@@ -4,9 +4,9 @@
  * @param {string} string
  * @returns {string}
  */
-let string = 'Z And V'
+
 export const replaceZAndVFromString = (string) => {
-    console.log(string.replace(string,  '* And *'))
+    return string.replaceAll('Z', '*').replaceAll('V', '*')
 };
 // Должно вернуть 'my name vlad and I'
 // Работаем по первому совпадению, на второе нам все равно. Если совпадений нет, возвращаем оригинальную строку с первого аргумента
@@ -20,10 +20,10 @@ export const replaceZAndVFromString = (string) => {
  * @param {string} newWord
  * @returns {string}
  */
-let stringA = 'my name bohdan and I'
-let word = 'bohdan'
-let newWord = 'vlad'
-export const changeWord = (stringA, word, newWord) => {console.log(stringA.replace(word,newWord))};
+
+export const changeWord = (string, word, newWord) => {
+    return string.replace(word, newWord)
+};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
@@ -32,9 +32,9 @@ export const changeWord = (stringA, word, newWord) => {console.log(stringA.repla
  * @returns {string}
  */
 
-let stringB = 'test strubg '
-let lengthB = 3
-export const truncate = (stringB, lengthB) => {console.log(stringB.slice(stringB,3))};
+export const truncate = (string, length) => {
+    return string.slice(0, length)
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -47,9 +47,18 @@ export const truncate = (stringB, lengthB) => {console.log(stringB.slice(stringB
  * @param {string} symbol
  * @returns {number}
  */
-let stringD = 'test'
-let symbolD = 't'
-export const quantityOfSymbols = (string, symbol) => {console.log(stringD.toLowerCase().split(symbolD.toLowerCase()).length-1)};
+
+export const quantityOfSymbols = (string, symbol) => {
+    let stringToLowCase = string.toLowerCase();
+    let symbolToLowCase = symbol.toLowerCase();
+    let result = 0;
+    for (let i = 0; i <= stringToLowCase.length; i++) {
+        if (stringToLowCase[i] === symbolToLowCase) {
+            result++;
+        }
+    }
+    return result
+};
 
 
 /**
@@ -67,38 +76,21 @@ export const quantityOfSymbols = (string, symbol) => {console.log(stringD.toLowe
  * @param {string} symbol
  * @returns {number}
  */
-let count = 0;
-let stringW = 'Test';
-let symbolW = 't';
 
-export const quantityOfSymbolsWithIndexOf = (stringW, symbolW) => {
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
     let index = -1;
-    stringW = stringW.toLowerCase().split('');
-    symbolW = symbolW.toLowerCase();
+    let count = 0;
+    string = string.toLowerCase().split('');
+    symbol = symbol.toLowerCase();
     while (true) {
-        index = stringW.indexOf(symbolW, index + 1);
+        index = string.indexOf(symbol, index + 1);
         if (index !== -1) {
             count++;
-        }
-        else {
+        } else {
             break;
         }
     }
-
-    console.log(count);
+    return count;
 };
 
-//quantityOfSymbolsWithIndexOf(stringW, symbolW);
-// let stringW = 'test';
-// let symbolW = 't';
-// export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
-//     let indices = 0
-//     let idx = string.indexOf(symbol)
-//     while (idx != -1) {
-//         indices ++
-//         idx = string.toLowerCase().indexOf(symbol.toLowerCase(), idx + 1);
-//     }
-//     return indices
-// };
-//
-// console.log(quantityOfSymbolsWithIndexOf(stringW, symbolW))
+
